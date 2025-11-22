@@ -1,0 +1,38 @@
+[
+  {
+    "id": "company-1",
+    "nameAr": "مجموعة الأطلس للضيافة",
+    "nameFr": "Groupe Atlas Hospitalité",
+    "nameEn": "Atlas Hospitality Group",
+    "registrationNumber": "RC123456",
+    "taxId": "IF12345678",
+    "industry": "hospitality",
+    "addressAr": "شارع محمد الخامس، الدار البيضاء",
+    "addressFr": "Avenue Mohammed V, Casablanca",
+    "addressEn": "Mohammed V Avenue, Casablanca",
+    "city": "Casablanca",
+    "phone": "+212522123456",
+    "email": "contact@atlashospitality.ma",
+    "status": "active",
+    "createdAt": "2024-01-15T08:30:00Z",
+    "updatedAt": "2024-01-15T08:30:00Z"
+  },
+  {
+    "id": "company-2",
+    "nameAr": "فنادق المغرب الحديث",
+    "nameFr": "Hôtels Maroc Moderne",
+    "nameEn": "Modern Morocco Hotels",
+    "registrationNumber": "RC789012",
+    "taxId": "IF87654321",
+    "industry": "hospitality",
+    "addressAr": "شارع الحسن الثاني، الرباط",
+    "addressFr": "Avenue Hassan II, Rabat",
+    "addressEn": "Hassan II Avenue, Rabat",
+    "city": "Rabat",
+    "phone": "+212537987654",
+    "email": "info@modernmorocco.ma",
+    "status": "active",
+    "createdAt": "2024-01-10T09:15:00Z",
+    "updatedAt": "2024-01-10T09:15:00Z"
+  }
+]

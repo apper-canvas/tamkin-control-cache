@@ -1,0 +1,72 @@
+[
+  {
+    "id": "perm-1",
+    "role": "ceo",
+    "resource": "companies",
+    "actions": ["view", "create", "edit", "delete"],
+    "scope": "company"
+  },
+  {
+    "id": "perm-2",
+    "role": "ceo",
+    "resource": "sites",
+    "actions": ["view", "create", "edit", "delete"],
+    "scope": "company"
+  },
+  {
+    "id": "perm-3",
+    "role": "ceo",
+    "resource": "users",
+    "actions": ["view", "create", "edit", "delete"],
+    "scope": "company"
+  },
+  {
+    "id": "perm-4",
+    "role": "ceo",
+    "resource": "permissions",
+    "actions": ["view"],
+    "scope": "company"
+  },
+  {
+    "id": "perm-5",
+    "role": "manager",
+    "resource": "companies",
+    "actions": ["view"],
+    "scope": "company"
+  },
+  {
+    "id": "perm-6",
+    "role": "manager",
+    "resource": "sites",
+    "actions": ["view", "edit"],
+    "scope": "site"
+  },
+  {
+    "id": "perm-7",
+    "role": "manager",
+    "resource": "users",
+    "actions": ["view", "create", "edit"],
+    "scope": "site"
+  },
+  {
+    "id": "perm-8",
+    "role": "user",
+    "resource": "companies",
+    "actions": ["view"],
+    "scope": "company"
+  },
+  {
+    "id": "perm-9",
+    "role": "user",
+    "resource": "sites",
+    "actions": ["view"],
+    "scope": "site"
+  },
+  {
+    "id": "perm-10",
+    "role": "user",
+    "resource": "users",
+    "actions": ["view"],
+    "scope": "self"
+  }
+]

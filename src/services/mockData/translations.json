@@ -1,0 +1,104 @@
+[
+  {
+    "key": "nav.dashboard.title",
+    "ar": "لوحة التحكم",
+    "fr": "Tableau de Bord",
+    "en": "Dashboard"
+  },
+  {
+    "key": "nav.company.title",
+    "ar": "الشركة",
+    "fr": "Entreprise",
+    "en": "Company"
+  },
+  {
+    "key": "nav.sites.title",
+    "ar": "المواقع",
+    "fr": "Sites",
+    "en": "Sites"
+  },
+  {
+    "key": "nav.users.title",
+    "ar": "المستخدمون",
+    "fr": "Utilisateurs",
+    "en": "Users"
+  },
+  {
+    "key": "nav.permissions.title",
+    "ar": "الصلاحيات",
+    "fr": "Permissions",
+    "en": "Permissions"
+  },
+  {
+    "key": "nav.settings.title",
+    "ar": "الإعدادات",
+    "fr": "Paramètres",
+    "en": "Settings"
+  },
+  {
+    "key": "role.ceo.label",
+    "ar": "المدير العام",
+    "fr": "PDG",
+    "en": "CEO"
+  },
+  {
+    "key": "role.manager.label",
+    "ar": "مدير",
+    "fr": "Gestionnaire",
+    "en": "Manager"
+  },
+  {
+    "key": "role.user.label",
+    "ar": "موظف",
+    "fr": "Utilisateur",
+    "en": "User"
+  },
+  {
+    "key": "common.loading",
+    "ar": "جاري التحميل...",
+    "fr": "Chargement...",
+    "en": "Loading..."
+  },
+  {
+    "key": "common.error",
+    "ar": "خطأ",
+    "fr": "Erreur",
+    "en": "Error"
+  },
+  {
+    "key": "common.empty",
+    "ar": "لا توجد بيانات",
+    "fr": "Aucune donnée",
+    "en": "No data"
+  },
+  {
+    "key": "common.save",
+    "ar": "حفظ",
+    "fr": "Enregistrer",
+    "en": "Save"
+  },
+  {
+    "key": "common.cancel",
+    "ar": "إلغاء",
+    "fr": "Annuler",
+    "en": "Cancel"
+  },
+  {
+    "key": "common.edit",
+    "ar": "تعديل",
+    "fr": "Modifier",
+    "en": "Edit"
+  },
+  {
+    "key": "common.delete",
+    "ar": "حذف",
+    "fr": "Supprimer",
+    "en": "Delete"
+  },
+  {
+    "key": "common.create",
+    "ar": "إنشاء",
+    "fr": "Créer",
+    "en": "Create"
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "id": "site-1",
+    "companyId": "company-1",
+    "nameAr": "فندق الأطلس الكبير",
+    "nameFr": "Grand Hôtel Atlas",
+    "nameEn": "Grand Atlas Hotel",
+    "siteCode": "GAH001",
+    "type": "hotel",
+    "addressAr": "الكورنيش، الدار البيضاء",
+    "addressFr": "La Corniche, Casablanca",
+    "addressEn": "The Corniche, Casablanca",
+    "city": "Casablanca",
+    "latitude": 33.5888,
+    "longitude": -7.6114,
+    "phone": "+212522111222",
+    "email": "grandatlas@atlashospitality.ma",
+    "capacity": 150,
+    "operatingHours": {
+      "reception": "24/7",
+      "restaurant": "6:00-23:00",
+      "spa": "9:00-21:00"
+    },
+    "status": "active",
+    "createdAt": "2024-01-16T10:00:00Z",
+    "updatedAt": "2024-01-16T10:00:00Z"
+  },
+  {
+    "id": "site-2",
+    "companyId": "company-1",
+    "nameAr": "مطعم الأندلس",
+    "nameFr": "Restaurant Al Andalous",
+    "nameEn": "Al Andalous Restaurant",
+    "siteCode": "AAR001",
+    "type": "restaurant",
+    "addressAr": "المدينة القديمة، فاس",
+    "addressFr": "Médina, Fès",
+    "addressEn": "Old Medina, Fes",
+    "city": "Fès",
+    "latitude": 34.0333,
+    "longitude": -5.0000,
+    "phone": "+212535333444",
+    "email": "andalous@atlashospitality.ma",
+    "capacity": 80,
+    "operatingHours": {
+      "lunch": "12:00-15:00",
+      "dinner": "19:00-23:00"
+    },
+    "status": "active",
+    "createdAt": "2024-01-18T11:30:00Z",
+    "updatedAt": "2024-01-18T11:30:00Z"
+  },
+  {
+    "id": "site-3",
+    "companyId": "company-2",
+    "nameAr": "منتجع الصحراء الذهبية",
+    "nameFr": "Resort Désert Doré",
+    "nameEn": "Golden Desert Resort",
+    "siteCode": "GDR001",
+    "type": "resort",
+    "addressAr": "ورزازات، طريق الصحراء",
+    "addressFr": "Ouarzazate, Route du Désert",
+    "addressEn": "Ouarzazate, Desert Route",
+    "city": "Ouarzazate",
+    "latitude": 30.9189,
+    "longitude": -6.8934,
+    "phone": "+212524555666",
+    "email": "goldendesert@modernmorocco.ma",
+    "capacity": 200,
+    "operatingHours": {
+      "reception": "24/7",
+      "pool": "6:00-22:00",
+      "restaurant": "7:00-23:00"
+    },
+    "status": "active",
+    "createdAt": "2024-01-20T14:20:00Z",
+    "updatedAt": "2024-01-20T14:20:00Z"
+  }
+]

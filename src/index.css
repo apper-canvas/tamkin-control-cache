@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'react-toastify/dist/ReactToastify.css';
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #F5F7FA;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    font-family: Cairo, sans-serif;
+  }
+
+  [dir="rtl"] .mirror-rtl {
+    transform: scaleX(-1);
+  }
+
+  /* Custom Toastify Styles */
+  .Toastify__toast-container {
+    z-index: 9999;
+  }
+
+  .Toastify__toast {
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+  }
+
+  .Toastify__toast--success {
+    background: #2D9F5E;
+  }
+
+  .Toastify__toast--error {
+    background: #C0392B;
+  }
+
+  .Toastify__toast--warning {
+    background: #E67E22;
+  }
+
+  .Toastify__toast--info {
+    background: #3498DB;
+  }
+}
+
+@layer components {
+  .role-badge-ceo {
+    @apply bg-primary text-white px-3 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .role-badge-manager {
+    @apply bg-secondary text-white px-3 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .role-badge-user {
+    @apply bg-accent text-white px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .hierarchy-border-company {
+    border-left: 4px solid #1E5B7E;
+  }
+
+  [dir="rtl"] .hierarchy-border-company {
+    border-left: none;
+    border-right: 4px solid #1E5B7E;
+  }
+
+  .hierarchy-border-site {
+    border-left: 3px solid #2C8CB8;
+  }
+
+  [dir="rtl"] .hierarchy-border-site {
+    border-left: none;
+    border-right: 3px solid #2C8CB8;
+  }
+
+  .hierarchy-border-user {
+    border-left: 2px solid #D4AF37;
+  }
+
+  [dir="rtl"] .hierarchy-border-user {
+    border-left: none;
+    border-right: 2px solid #D4AF37;
+  }
+}
