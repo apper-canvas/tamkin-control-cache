@@ -9,7 +9,7 @@ const Permissions = () => {
   if (!canView('permissions')) {
     return (
       <ErrorView 
-        error="غير مخول لك الوصول إلى معلومات الصلاحيات"
+error="You are not authorized to access permission information"
         showRetry={false}
       />
     );
@@ -19,8 +19,8 @@ const Permissions = () => {
     <div className="space-y-6">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-display font-bold text-gray-900">الصلاحيات والأدوار</h1>
-        <p className="text-gray-600 mt-1">عرض تفصيلي لصلاحيات كل دور في النظام</p>
+<h1 className="text-3xl font-display font-bold text-gray-900">Permissions and Roles</h1>
+<p className="text-gray-600 mt-1">Detailed view of permissions for each role in the system</p>
       </div>
 
       {/* Permission Matrix */}

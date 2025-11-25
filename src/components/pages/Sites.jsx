@@ -26,7 +26,7 @@ const Sites = () => {
   if (!canView('sites')) {
     return (
       <ErrorView 
-        error="غير مخول لك الوصول إلى معلومات المواقع"
+error="You are not authorized to access site information"
         showRetry={false}
       />
     );
@@ -37,13 +37,13 @@ const Sites = () => {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-display font-bold text-gray-900">إدارة المواقع</h1>
-          <p className="text-gray-600 mt-1">عرض وإدارة جميع المواقع والفروع</p>
+<h1 className="text-3xl font-display font-bold text-gray-900">Site Management</h1>
+<p className="text-gray-600 mt-1">View and manage all sites and branches</p>
         </div>
         {canCreate('sites') && (
           <Button onClick={handleCreate}>
             <ApperIcon name="Plus" className="h-4 w-4 me-2" />
-            إضافة موقع جديد
+Add New Site
           </Button>
         )}
       </div>

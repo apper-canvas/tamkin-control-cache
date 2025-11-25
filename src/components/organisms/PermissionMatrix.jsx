@@ -53,28 +53,28 @@ const PermissionMatrix = () => {
   };
 
   const getRoleLabel = (role) => {
-    const labels = {
-      ceo: 'المدير العام',
-      manager: 'مدير',
-      user: 'موظف'
+const labels = {
+      ceo: 'CEO',
+      manager: 'Manager',
+      user: 'User'
     };
     return labels[role] || role;
   };
 
-  const getResourceLabel = (resource) => {
+const getResourceLabel = (resource) => {
     const labels = {
-      companies: 'الشركات',
-      sites: 'المواقع',
-      users: 'المستخدمون',
-      permissions: 'الصلاحيات'
+      companies: 'Companies',
+      sites: 'Sites',
+      users: 'Users',
+      permissions: 'Permissions'
     };
     return labels[resource] || resource;
   };
 
-  const getActionLabel = (action) => {
+const getActionLabel = (action) => {
     const labels = {
-      view: 'عرض',
-      create: 'إنشاء',
+      view: 'View',
+      create: 'Create',
       edit: 'تعديل',
       delete: 'حذف'
     };
@@ -88,8 +88,8 @@ const PermissionMatrix = () => {
     <div className="space-y-6">
       {/* Header */}
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-display font-bold text-gray-900">مصفوفة الصلاحيات</h2>
-        <p className="text-gray-600">عرض شامل لصلاحيات كل دور في النظام</p>
+<h2 className="text-2xl font-display font-bold text-gray-900">Permission Matrix</h2>
+        <p className="text-gray-600">Comprehensive view of permissions for each role in the system</p>
       </div>
 
       {/* Permission Matrix */}
@@ -98,7 +98,7 @@ const PermissionMatrix = () => {
           <table className="w-full">
             <thead>
               <tr className="border-b border-gray-200">
-                <th className="text-start py-4 px-3 font-display font-semibold text-gray-900">
+<th className="text-start py-4 px-3 font-display font-semibold text-gray-900">
                   المورد / العملية
                 </th>
                 {roles.map(role => (
@@ -163,19 +163,19 @@ const PermissionMatrix = () => {
 
       {/* Legend */}
       <Card className="p-4">
-        <h3 className="font-display font-semibold text-gray-900 mb-3">المفاتيح</h3>
+<h3 className="font-display font-semibold text-gray-900 mb-3">Legend</h3>
         <div className="flex flex-wrap gap-6 text-sm">
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 bg-success/10 rounded-full flex items-center justify-center">
               <ApperIcon name="Check" className="h-4 w-4 text-success" />
             </div>
-            <span className="text-gray-700">مسموح</span>
+<span className="text-gray-700">Allowed</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
               <ApperIcon name="X" className="h-4 w-4 text-gray-400" />
             </div>
-            <span className="text-gray-700">غير مسموح</span>
+<span className="text-gray-700">Not Allowed</span>
           </div>
         </div>
       </Card>

@@ -52,57 +52,57 @@ const Dashboard = () => {
   };
 
   const getDashboardTitle = () => {
-    const titles = {
-      ceo: 'لوحة تحكم المدير العام',
-      manager: 'لوحة تحكم المدير',
-      user: 'لوحة التحكم الشخصية'
+const titles = {
+      ceo: 'CEO Dashboard',
+      manager: 'Manager Dashboard',
+      user: 'Personal Dashboard'
     };
-    return titles[user?.role] || 'لوحة التحكم';
+    return titles[user?.role] || 'Dashboard';
   };
 
-  const getWelcomeMessage = () => {
+const getWelcomeMessage = () => {
     const time = new Date().getHours();
     let greeting;
     
     if (time < 12) {
-      greeting = 'صباح الخير';
+      greeting = 'Good Morning';
     } else if (time < 18) {
-      greeting = 'مساء الخير';
+      greeting = 'Good Afternoon';
     } else {
-      greeting = 'مساء الخير';
+      greeting = 'Good Evening';
     }
     
-    return `${greeting}، ${user?.firstNameAr || user?.firstNameFr || user?.firstNameEn}`;
+    return `${greeting}, ${user?.firstNameEn || user?.firstNameFr || user?.firstNameAr}`;
   };
 
-  const quickActions = [
+const quickActions = [
     {
-      title: 'إدارة الشركة',
-      description: 'عرض وتحديث معلومات الشركة',
+      title: 'Company Management',
+      description: 'View and update company information',
       icon: 'Building2',
       color: 'from-primary to-secondary',
       href: 'company',
       permission: { resource: 'companies', action: 'view' }
     },
     {
-      title: 'إدارة المواقع',
-      description: 'عرض وإدارة جميع المواقع',
+      title: 'Sites Management',
+      description: 'View and manage all sites',
       icon: 'MapPin',
       color: 'from-secondary to-info',
       href: 'sites',
       permission: { resource: 'sites', action: 'view' }
     },
     {
-      title: 'إدارة المستخدمين',
-      description: 'إدارة حسابات المستخدمين والأدوار',
+      title: 'User Management',
+      description: 'Manage user accounts and roles',
       icon: 'Users',
       color: 'from-accent to-yellow-500',
       href: 'users',
       permission: { resource: 'users', action: 'view' }
     },
     {
-      title: 'مصفوفة الصلاحيات',
-      description: 'عرض صلاحيات الأدوار المختلفة',
+      title: 'Permission Matrix',
+      description: 'View permissions for different roles',
       icon: 'Shield',
       color: 'from-success to-green-500',
       href: 'permissions',
@@ -115,8 +115,8 @@ const Dashboard = () => {
   );
 
   const statsCards = [
-    {
-      title: 'الشركات',
+{
+      title: 'Companies',
       value: stats.companies,
       icon: 'Building2',
       color: 'text-primary',
@@ -124,7 +124,7 @@ const Dashboard = () => {
       show: canView('companies')
     },
     {
-      title: 'المواقع',
+      title: 'Sites',
       value: stats.sites,
       icon: 'MapPin',
       color: 'text-secondary',
@@ -132,7 +132,7 @@ const Dashboard = () => {
       show: canView('sites')
     },
     {
-      title: 'المستخدمون',
+      title: 'Users',
       value: stats.users,
       icon: 'Users',
       color: 'text-accent',
@@ -151,7 +151,7 @@ const Dashboard = () => {
       <div className="bg-gradient-to-r from-primary via-secondary to-info rounded-2xl p-8 text-white">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="space-y-2">
-            <h1 className="text-3xl font-display font-bold">{getDashboardTitle()}</h1>
+<h1 className="text-3xl font-display font-bold">{getDashboardTitle()}</h1>
             <p className="text-white/90 text-lg">{getWelcomeMessage()}</p>
             {user && (
               <div className="pt-2">
@@ -188,7 +188,7 @@ const Dashboard = () => {
 
       {/* Quick Actions */}
       <div className="space-y-4">
-        <h2 className="text-2xl font-display font-bold text-gray-900">الإجراءات السريعة</h2>
+<h2 className="text-2xl font-display font-bold text-gray-900">Quick Actions</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {filteredActions.map((action, index) => (
             <Card key={index} variant="interactive" className="p-6 group">
@@ -197,7 +197,7 @@ const Dashboard = () => {
                   <ApperIcon name={action.icon} className="h-6 w-6 text-white" />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-lg font-display font-semibold text-gray-900">{action.title}</h3>
+<h3 className="text-lg font-display font-semibold text-gray-900">{action.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{action.description}</p>
                 </div>
                 <Button 
@@ -206,8 +206,8 @@ const Dashboard = () => {
                   size="sm"
                   className="w-full"
                 >
-                  الانتقال
-                  <ApperIcon name="ArrowLeft" className="h-4 w-4 ms-2 mirror-rtl" />
+Go to
+                  <ApperIcon name="ArrowRight" className="h-4 w-4 ms-2" />
                 </Button>
               </div>
             </Card>
@@ -219,17 +219,17 @@ const Dashboard = () => {
       <Card className="p-6">
         <div className="flex items-center justify-between">
           <div className="space-y-1">
-            <h3 className="text-lg font-display font-semibold text-gray-900">معلومات النظام</h3>
-            <p className="text-gray-600">نظام تمكين للامتثال والسلامة في قطاع الضيافة</p>
+<h3 className="text-lg font-display font-semibold text-gray-900">System Information</h3>
+            <p className="text-gray-600">Tamkin system for compliance and safety in the hospitality sector</p>
           </div>
           <div className="flex items-center gap-4 text-sm text-gray-500">
             <div className="flex items-center gap-1">
               <ApperIcon name="Calendar" className="h-4 w-4" />
-              <span>{new Date().toLocaleDateString('ar-MA')}</span>
+<span>{new Date().toLocaleDateString('en-US')}</span>
             </div>
             <div className="flex items-center gap-1">
-              <ApperIcon name="Clock" className="h-4 w-4" />
-              <span>{new Date().toLocaleTimeString('ar-MA', { hour: '2-digit', minute: '2-digit' })}</span>
+<ApperIcon name="Clock" className="h-4 w-4" />
+              <span>{new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</span>
             </div>
           </div>
         </div>

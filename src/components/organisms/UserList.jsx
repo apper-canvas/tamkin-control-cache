@@ -48,14 +48,14 @@ const UserList = ({ onEdit, onView }) => {
   };
 
   const handleDelete = async (userId) => {
-    if (!window.confirm('هل أنت متأكد من حذف هذا المستخدم؟')) return;
+if (!window.confirm('Are you sure you want to delete this user?')) return;
     
     try {
       await userService.delete(userId);
       await loadUsers();
-      toast.success('تم حذف المستخدم بنجاح');
+toast.success('User deleted successfully');
     } catch (err) {
-      toast.error('فشل في حذف المستخدم');
+toast.error('Failed to delete user');
     }
   };
 
@@ -80,7 +80,7 @@ const UserList = ({ onEdit, onView }) => {
         <SearchBar 
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="البحث عن المستخدمين..."
+placeholder="Search users..."
           className="w-full sm:w-auto"
         />
         
@@ -89,23 +89,23 @@ const UserList = ({ onEdit, onView }) => {
           onChange={(e) => setRoleFilter(e.target.value)}
           className="px-4 py-2 border border-gray-200 rounded-lg bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent"
         >
-          <option value="all">جميع الأدوار</option>
-          <option value="ceo">المدير العام</option>
-          <option value="manager">مدير</option>
-          <option value="user">موظف</option>
+<option value="all">All Roles</option>
+<option value="ceo">CEO</option>
+<option value="manager">Manager</option>
+<option value="user">User</option>
         </select>
       </div>
 
       {/* Users Grid */}
       {!filteredUsers.length ? (
         <Empty 
-          title="لا توجد نتائج"
-          description="لا توجد مستخدمين مطابقين لمعايير البحث"
+title="No Results"
+description="No users match the search criteria"
           icon="UserX"
           action={
             <Button onClick={() => onEdit?.()} className="mt-4">
               <ApperIcon name="Plus" className="h-4 w-4 me-2" />
-              إضافة مستخدم جديد
+Add New User
             </Button>
           }
         />
@@ -124,7 +124,7 @@ const UserList = ({ onEdit, onView }) => {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-display font-semibold text-gray-900 mb-1">
-                      {user.firstNameAr || user.firstNameFr} {user.lastNameAr || user.lastNameFr}
+{user.firstNameEn || user.firstNameFr || user.firstNameAr} {user.lastNameEn || user.lastNameFr || user.lastNameAr}
                     </h3>
                     <p className="text-sm text-gray-600">{user.email}</p>
                     <div className="mt-2">
@@ -147,7 +147,7 @@ const UserList = ({ onEdit, onView }) => {
                 {user.lastLogin && (
                   <div className="flex items-center gap-2 text-gray-600">
                     <ApperIcon name="Clock" className="h-4 w-4" />
-                    <span>آخر دخول: {format(new Date(user.lastLogin), 'yyyy/MM/dd')}</span>
+<span>Last Login: {format(new Date(user.lastLogin), 'yyyy/MM/dd')}</span>
                   </div>
                 )}
               </div>
@@ -160,7 +160,7 @@ const UserList = ({ onEdit, onView }) => {
                   className="flex-1"
                 >
                   <ApperIcon name="Eye" className="h-4 w-4 me-1" />
-                  عرض
+View
                 </Button>
                 
                 {canEdit('users') && (
@@ -170,7 +170,7 @@ const UserList = ({ onEdit, onView }) => {
                     onClick={() => onEdit?.(user)}
                   >
                     <ApperIcon name="Edit" className="h-4 w-4 me-1" />
-                    تعديل
+Edit
                   </Button>
                 )}
                 

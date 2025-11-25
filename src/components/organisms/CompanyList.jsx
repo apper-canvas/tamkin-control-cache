@@ -37,14 +37,14 @@ const CompanyList = ({ onEdit, onView }) => {
   };
 
   const handleDelete = async (companyId) => {
-    if (!window.confirm('هل أنت متأكد من حذف هذه الشركة؟')) return;
+if (!window.confirm('Are you sure you want to delete this company?')) return;
     
     try {
       await companyService.delete(companyId);
       await loadCompanies();
-      toast.success('تم حذف الشركة بنجاح');
+toast.success('Company deleted successfully');
     } catch (err) {
-      toast.error('فشل في حذف الشركة');
+toast.error('Failed to delete company');
     }
   };
 
@@ -52,13 +52,13 @@ const CompanyList = ({ onEdit, onView }) => {
   if (error) return <ErrorView error={error} onRetry={loadCompanies} />;
   if (!companies.length) return (
     <Empty 
-      title="لا توجد شركات"
-      description="لم يتم إنشاء أي شركات بعد"
+title="No Companies"
+      description="No companies have been created yet"
       icon="Building2"
       action={
         <Button onClick={() => onEdit?.()} className="mt-4">
           <ApperIcon name="Plus" className="h-4 w-4 me-2" />
-          إضافة شركة جديدة
+Add New Company
         </Button>
       }
     />
@@ -106,7 +106,7 @@ const CompanyList = ({ onEdit, onView }) => {
               className="flex-1"
             >
               <ApperIcon name="Eye" className="h-4 w-4 me-1" />
-              عرض
+View
             </Button>
             
             {canEdit('companies') && (
@@ -116,7 +116,7 @@ const CompanyList = ({ onEdit, onView }) => {
                 onClick={() => onEdit?.(company)}
               >
                 <ApperIcon name="Edit" className="h-4 w-4 me-1" />
-                تعديل
+Edit
               </Button>
             )}
             

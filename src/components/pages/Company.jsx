@@ -50,8 +50,8 @@ const Company = () => {
 
   if (!canView('companies')) {
     return (
-      <ErrorView 
-        error="غير مخول لك الوصول إلى معلومات الشركة"
+<ErrorView 
+        error="You are not authorized to access company information"
         showRetry={false}
       />
     );
@@ -65,13 +65,13 @@ const Company = () => {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-display font-bold text-gray-900">إدارة الشركة</h1>
-          <p className="text-gray-600 mt-1">عرض وإدارة معلومات الشركة</p>
+<h1 className="text-3xl font-display font-bold text-gray-900">Company Management</h1>
+          <p className="text-gray-600 mt-1">View and manage company information</p>
         </div>
         {canEdit('companies') && (
           <Button onClick={() => handleEdit(currentCompany)}>
             <ApperIcon name="Edit" className="h-4 w-4 me-2" />
-            تعديل الشركة
+Edit Company
           </Button>
         )}
       </div>
@@ -82,11 +82,10 @@ const Company = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Basic Information */}
             <div className="space-y-6">
-              <h2 className="text-xl font-display font-bold text-gray-900 mb-4">معلومات أساسية</h2>
-              
+<h2 className="text-xl font-display font-bold text-gray-900 mb-4">Basic Information</h2>
               <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">الاسم (عربي)</label>
+<div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Name (Arabic)</label>
                   <p className="text-lg font-semibold text-gray-900">{currentCompany.nameAr}</p>
                 </div>
                 
@@ -101,18 +100,18 @@ const Company = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">رقم التسجيل</label>
+<div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Registration Number</label>
                     <p className="text-gray-900">{currentCompany.registrationNumber}</p>
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">الرقم الضريبي</label>
+<div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Tax Number</label>
                     <p className="text-gray-900">{currentCompany.taxId}</p>
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">القطاع</label>
+<div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Sector</label>
                   <p className="text-gray-900 capitalize">{currentCompany.industry}</p>
                 </div>
               </div>
@@ -120,11 +119,10 @@ const Company = () => {
 
             {/* Contact Information */}
             <div className="space-y-6">
-              <h2 className="text-xl font-display font-bold text-gray-900 mb-4">معلومات الاتصال</h2>
-              
+<h2 className="text-xl font-display font-bold text-gray-900 mb-4">Contact Information</h2>
               <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">العنوان (عربي)</label>
+<div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Address (Arabic)</label>
                   <p className="text-gray-900">{currentCompany.addressAr}</p>
                 </div>
                 
@@ -141,8 +139,8 @@ const Company = () => {
                 <div className="grid grid-cols-1 gap-4">
                   <div className="flex items-center gap-3">
                     <ApperIcon name="Phone" className="h-5 w-5 text-gray-500" />
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700">رقم الهاتف</label>
+<div>
+                      <label className="block text-sm font-medium text-gray-700">Phone Number</label>
                       <p className="text-gray-900 text-start">{currentCompany.phone}</p>
                     </div>
                   </div>
@@ -150,7 +148,7 @@ const Company = () => {
                   <div className="flex items-center gap-3">
                     <ApperIcon name="Mail" className="h-5 w-5 text-gray-500" />
                     <div>
-                      <label className="block text-sm font-medium text-gray-700">البريد الإلكتروني</label>
+<label className="block text-sm font-medium text-gray-700">Email</label>
                       <p className="text-gray-900 text-start">{currentCompany.email}</p>
                     </div>
                   </div>
@@ -163,22 +161,22 @@ const Company = () => {
           <div className="mt-8 pt-6 border-t border-gray-200">
             <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
               <div>
-                <span className="font-medium">الحالة: </span>
+<span className="font-medium">Status: </span>
                 <span className={`px-2 py-1 rounded-full text-xs ${
                   currentCompany.status === 'active' ? 'bg-success/10 text-success' :
                   currentCompany.status === 'suspended' ? 'bg-error/10 text-error' :
                   'bg-gray-100 text-gray-600'
                 }`}>
-                  {currentCompany.status === 'active' ? 'نشط' : 
-                   currentCompany.status === 'suspended' ? 'معلق' : 'مؤرشف'}
+{currentCompany.status === 'active' ? 'Active' : 
+                   currentCompany.status === 'suspended' ? 'Suspended' : 'Archived'}
                 </span>
               </div>
               <div>
-                <span className="font-medium">تاريخ الإنشاء: </span>
-                {new Date(currentCompany.createdAt).toLocaleDateString('ar-MA')}
+<span className="font-medium">Created Date: </span>
+                {new Date(currentCompany.createdAt).toLocaleDateString('en-US')}
               </div>
-              <div>
-                <span className="font-medium">آخر تحديث: </span>
+<div>
+                <span className="font-medium">Last Updated: </span>
                 {new Date(currentCompany.updatedAt).toLocaleDateString('ar-MA')}
               </div>
             </div>

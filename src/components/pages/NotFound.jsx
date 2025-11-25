@@ -21,9 +21,9 @@ const NotFound = () => {
 
         {/* Error Message */}
         <div className="space-y-3">
-          <h1 className="text-3xl font-display font-bold text-gray-900">الصفحة غير موجودة</h1>
+<h1 className="text-3xl font-display font-bold text-gray-900">Page Not Found</h1>
           <p className="text-gray-600 leading-relaxed">
-            عذراً، الصفحة التي تبحث عنها غير موجودة أو تم نقلها إلى موقع آخر.
+Sorry, the page you are looking for does not exist or has been moved to another location.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ const NotFound = () => {
             className="w-full"
           >
             <ApperIcon name="Home" className="h-4 w-4 me-2" />
-            العودة إلى الصفحة الرئيسية
+Return to Homepage
           </Button>
           
           <Button 
@@ -42,15 +42,15 @@ const NotFound = () => {
             variant="outline"
             className="w-full"
           >
-            <ApperIcon name="ArrowRight" className="h-4 w-4 me-2 mirror-rtl" />
-            العودة إلى الصفحة السابقة
+<ApperIcon name="ArrowLeft" className="h-4 w-4 me-2" />
+            Go Back
           </Button>
         </div>
 
         {/* Help Text */}
         <div className="pt-6 border-t border-gray-200">
-          <p className="text-sm text-gray-500">
-            إذا كنت تعتقد أن هذا خطأ، يرجى التواصل مع فريق الدعم الفني
+<p className="text-sm text-gray-500">
+            If you believe this is an error, please contact technical support
           </p>
         </div>
       </div>

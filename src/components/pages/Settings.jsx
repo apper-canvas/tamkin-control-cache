@@ -22,19 +22,19 @@ const Settings = () => {
       ...prev,
       [type]: !prev[type]
     }));
-    toast.success('تم تحديث إعدادات الإشعارات');
+toast.success('Notification settings updated');
   };
 
   const handleSaveSettings = () => {
-    toast.success('تم حفظ الإعدادات بنجاح');
+toast.success('Settings saved successfully');
   };
 
   return (
     <div className="space-y-6">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-display font-bold text-gray-900">الإعدادات</h1>
-        <p className="text-gray-600 mt-1">إدارة إعدادات النظام والتفضيلات الشخصية</p>
+<h1 className="text-3xl font-display font-bold text-gray-900">Settings</h1>
+        <p className="text-gray-600 mt-1">Manage system settings and personal preferences</p>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
@@ -45,15 +45,15 @@ const Settings = () => {
               <ApperIcon name="Globe" className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h2 className="text-xl font-display font-bold text-gray-900">إعدادات اللغة</h2>
-              <p className="text-gray-600 text-sm">اختر لغة واجهة النظام</p>
+<h2 className="text-xl font-display font-bold text-gray-900">Language Settings</h2>
+              <p className="text-gray-600 text-sm">Choose the system interface language</p>
             </div>
           </div>
 
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-3">
-                اللغة الحالية
+<label className="block text-sm font-medium text-gray-700 mb-3">
+                Current Language
               </label>
               <LanguageSelector className="w-full" />
             </div>
@@ -62,8 +62,8 @@ const Settings = () => {
               <div className="flex items-start gap-3">
                 <ApperIcon name="Info" className="h-5 w-5 text-blue-600 mt-0.5" />
                 <div className="text-sm text-blue-800">
-                  <p className="font-medium mb-1">ملاحظة حول اللغة</p>
-                  <p>سيتم تطبيق التغيير على جميع صفحات النظام، وسيتم حفظ تفضيلك للجلسات المستقبلية.</p>
+<p className="font-medium mb-1">Language Note</p>
+                  <p>Changes will be applied to all system pages, and your preference will be saved for future sessions.</p>
                 </div>
               </div>
             </div>
@@ -76,9 +76,9 @@ const Settings = () => {
             <div className="w-10 h-10 bg-gradient-to-br from-accent/10 to-accent/5 rounded-lg flex items-center justify-center">
               <ApperIcon name="Bell" className="h-5 w-5 text-accent" />
             </div>
-            <div>
-              <h2 className="text-xl font-display font-bold text-gray-900">إعدادات الإشعارات</h2>
-              <p className="text-gray-600 text-sm">إدارة تفضيلات الإشعارات</p>
+<div>
+              <h2 className="text-xl font-display font-bold text-gray-900">Notification Settings</h2>
+<p className="text-gray-600 text-sm">Manage notification preferences</p>
             </div>
           </div>
 
@@ -86,7 +86,7 @@ const Settings = () => {
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <div className="flex items-center gap-3">
                 <ApperIcon name="Mail" className="h-4 w-4 text-gray-600" />
-                <span className="text-gray-900 font-medium">إشعارات البريد الإلكتروني</span>
+<span className="text-gray-900 font-medium">Email Notifications</span>
               </div>
               <button
                 onClick={() => handleNotificationChange('email')}
@@ -103,7 +103,7 @@ const Settings = () => {
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <div className="flex items-center gap-3">
                 <ApperIcon name="MessageSquare" className="h-4 w-4 text-gray-600" />
-                <span className="text-gray-900 font-medium">إشعارات الرسائل النصية</span>
+<span className="text-gray-900 font-medium">SMS Notifications</span>
               </div>
               <button
                 onClick={() => handleNotificationChange('sms')}
@@ -119,8 +119,8 @@ const Settings = () => {
 
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <div className="flex items-center gap-3">
-                <ApperIcon name="Smartphone" className="h-4 w-4 text-gray-600" />
-                <span className="text-gray-900 font-medium">الإشعارات الفورية</span>
+<ApperIcon name="Smartphone" className="h-4 w-4 text-gray-600" />
+                <span className="text-gray-900 font-medium">Push Notifications</span>
               </div>
               <button
                 onClick={() => handleNotificationChange('push')}
@@ -144,38 +144,38 @@ const Settings = () => {
                 <ApperIcon name="User" className="h-5 w-5 text-secondary" />
               </div>
               <div>
-                <h2 className="text-xl font-display font-bold text-gray-900">الملف الشخصي</h2>
-                <p className="text-gray-600 text-sm">معلومات الحساب الحالي</p>
+<h2 className="text-xl font-display font-bold text-gray-900">Profile</h2>
+                <p className="text-gray-600 text-sm">Current account information</p>
               </div>
             </div>
 
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">الاسم</label>
-                  <p className="text-gray-900">{user.firstNameAr || user.firstNameFr}</p>
+<label className="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                  <p className="text-gray-900">{user.firstNameEn || user.firstNameFr || user.firstNameAr}</p>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">اللقب</label>
+<div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
                   <p className="text-gray-900">{user.lastNameAr || user.lastNameFr}</p>
                 </div>
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">البريد الإلكتروني</label>
+<label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
                 <p className="text-gray-900 text-start">{user.email}</p>
               </div>
               
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">رقم الهاتف</label>
+<div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
                 <p className="text-gray-900 text-start">{user.phone}</p>
               </div>
               
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">الدور</label>
-                <p className="text-gray-900 capitalize">
-                  {user.role === 'ceo' ? 'المدير العام' :
-                   user.role === 'manager' ? 'مدير' : 'موظف'}
+<p className="text-gray-900 capitalize">
+                  {user.role === 'ceo' ? 'CEO' :
+                   user.role === 'manager' ? 'Manager' : 'User'}
                 </p>
               </div>
             </div>
@@ -189,23 +189,23 @@ const Settings = () => {
               <ApperIcon name="Info" className="h-5 w-5 text-info" />
             </div>
             <div>
-              <h2 className="text-xl font-display font-bold text-gray-900">معلومات النظام</h2>
-              <p className="text-gray-600 text-sm">تفاصيل النظام والإصدار</p>
+<h2 className="text-xl font-display font-bold text-gray-900">System Information</h2>
+              <p className="text-gray-600 text-sm">System details and version</p>
             </div>
           </div>
 
           <div className="space-y-4">
             <div className="flex justify-between items-center">
-              <span className="text-gray-600">اسم النظام</span>
+<span className="text-gray-600">System Name</span>
               <span className="text-gray-900 font-medium">Tamkin Control</span>
             </div>
-            <div className="flex justify-between items-center">
-              <span className="text-gray-600">الإصدار</span>
+<div className="flex justify-between items-center">
+              <span className="text-gray-600">Version</span>
               <span className="text-gray-900 font-medium">1.0.0</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-gray-600">آخر تحديث</span>
-              <span className="text-gray-900 font-medium">{new Date().toLocaleDateString('ar-MA')}</span>
+<span className="text-gray-900 font-medium">{new Date().toLocaleDateString('en-US')}</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-gray-600">المطور</span>
@@ -217,7 +217,7 @@ const Settings = () => {
 
       {/* Save Button */}
       <div className="flex justify-center pt-6">
-        <Button onClick={handleSaveSettings} size="lg">
+<Button onClick={handleSaveSettings} size="lg">
           <ApperIcon name="Save" className="h-4 w-4 me-2" />
           حفظ جميع الإعدادات
         </Button>

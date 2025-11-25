@@ -19,7 +19,7 @@ export const useTranslation = () => {
     loadTranslations();
   }, [currentLanguage]);
 
-  const t = (key, fallback = key) => {
+const t = (key, fallback = key) => {
     return translations[key] || fallback;
   };
 

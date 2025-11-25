@@ -25,8 +25,8 @@ const Users = () => {
 
   if (!canView('users')) {
     return (
-      <ErrorView 
-        error="غير مخول لك الوصول إلى معلومات المستخدمين"
+<ErrorView 
+        error="You are not authorized to access user information"
         showRetry={false}
       />
     );
@@ -37,13 +37,13 @@ const Users = () => {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-display font-bold text-gray-900">إدارة المستخدمين</h1>
-          <p className="text-gray-600 mt-1">إدارة حسابات المستخدمين والأدوار والصلاحيات</p>
+<h1 className="text-3xl font-display font-bold text-gray-900">User Management</h1>
+          <p className="text-gray-600 mt-1">Manage user accounts, roles, and permissions</p>
         </div>
         {canCreate('users') && (
           <Button onClick={handleCreate}>
-            <ApperIcon name="Plus" className="h-4 w-4 me-2" />
-            إضافة مستخدم جديد
+<ApperIcon name="Plus" className="h-4 w-4 me-2" />
+            Add New User
           </Button>
         )}
       </div>

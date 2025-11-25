@@ -23,7 +23,7 @@ class TranslationService {
   async getTranslations(language = 'fr') {
     await this.delay();
     const result = {};
-    Object.keys(this.translations).forEach(key => {
+Object.keys(this.translations).forEach(key => {
       result[key] = this.translations[key][language] || this.translations[key].en || key;
     });
     return result;
@@ -34,7 +34,7 @@ class TranslationService {
     return { ...this.translations };
   }
 
-  translate(key, language = 'fr') {
+translate(key, language = 'en') {
     const translation = this.translations[key];
     if (!translation) return key;
     return translation[language] || translation.en || key;

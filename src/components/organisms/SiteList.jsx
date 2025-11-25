@@ -44,14 +44,14 @@ const SiteList = ({ onEdit, onView }) => {
   };
 
   const handleDelete = async (siteId) => {
-    if (!window.confirm('هل أنت متأكد من حذف هذا الموقع؟')) return;
+if (!window.confirm('Are you sure you want to delete this site?')) return;
     
     try {
       await siteService.delete(siteId);
       await loadSites();
-      toast.success('تم حذف الموقع بنجاح');
+toast.success('Site deleted successfully');
     } catch (err) {
-      toast.error('فشل في حذف الموقع');
+toast.error('Failed to delete site');
     }
   };
 
@@ -67,12 +67,12 @@ const SiteList = ({ onEdit, onView }) => {
   };
 
   const getSiteTypeName = (type) => {
-    const names = {
-      hotel: 'فندق',
-      restaurant: 'مطعم',
-      cafe: 'مقهى',
-      resort: 'منتجع',
-      other: 'أخرى'
+const names = {
+      hotel: 'Hotel',
+      restaurant: 'Restaurant',
+      cafe: 'Cafe',
+      resort: 'Resort',
+      other: 'Other'
     };
     return names[type] || names.other;
   };
@@ -81,13 +81,13 @@ const SiteList = ({ onEdit, onView }) => {
   if (error) return <ErrorView error={error} onRetry={loadSites} />;
   if (!sites.length) return (
     <Empty 
-      title="لا توجد مواقع"
-      description="لم يتم إنشاء أي مواقع بعد"
+title="No Sites"
+      description="No sites have been created yet"
       icon="MapPin"
       action={
         <Button onClick={() => onEdit?.()} className="mt-4">
           <ApperIcon name="Plus" className="h-4 w-4 me-2" />
-          إضافة موقع جديد
+Add New Site
         </Button>
       }
     />
@@ -129,7 +129,7 @@ const SiteList = ({ onEdit, onView }) => {
             </div>
             <div className="flex items-center gap-2 text-gray-600">
               <ApperIcon name="Users" className="h-4 w-4" />
-              <span>السعة: {site.capacity}</span>
+<span>Capacity: {site.capacity}</span>
             </div>
             <div className="flex items-center gap-2 text-gray-600">
               <ApperIcon name="Phone" className="h-4 w-4" />
@@ -145,7 +145,7 @@ const SiteList = ({ onEdit, onView }) => {
               className="flex-1"
             >
               <ApperIcon name="Eye" className="h-4 w-4 me-1" />
-              عرض
+View
             </Button>
             
             {canEdit('sites') && (
@@ -155,7 +155,7 @@ const SiteList = ({ onEdit, onView }) => {
                 onClick={() => onEdit?.(site)}
               >
                 <ApperIcon name="Edit" className="h-4 w-4 me-1" />
-                تعديل
+Edit
               </Button>
             )}
             

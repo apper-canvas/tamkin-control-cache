@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  currentLanguage: 'fr',
+  currentLanguage: 'en',
   direction: 'ltr',
   translations: {}
 };
